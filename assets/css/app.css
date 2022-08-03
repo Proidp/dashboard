@@ -513,12 +513,21 @@ body{
   column-gap: 30px;
   position: relative;
 }
+
 .line-chart{
   background-color: #fff;
   padding: 10px;
   margin-top: 50px;
   border-radius: 20px;
+  width: 50vw;
 }
+
+@media (max-width: 1640px) {
+  .line-chart{
+    width: 45vw;
+  }
+}
+
 
 .doughnut-chart{
   background-color: #fff;
@@ -526,6 +535,31 @@ body{
   border-radius: 20px;
   margin-top: 50px;
 }
+
+@media (max-width: 1600px) {
+  .doughnut-chart{
+    width: 15vw;
+  }
+}
+@media (max-width: 1364px) {
+  .chart-area{
+    flex-wrap: wrap;
+  }
+  .line-chart{
+    width: 50vw;
+  }
+  .doughnut-chart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    column-gap: 25px;
+  }
+  .doughnut-chart-top{
+    display: block;
+  }
+}
+
 .doughnut-chart .doughnut-chart-title{
   font-size: 25px;
   padding-left: 20px;
