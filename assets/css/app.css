@@ -7,6 +7,9 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
+:focus-visible{
+  outline: none;
+}
 body{
   background-color: rgba(245,245,245,1);
 }
@@ -81,6 +84,10 @@ body{
 .sidebar li a:hover svg{
     fill: #5578EB;
     transition: all 0.5s ease;
+}
+.sidebar li.active a svg{
+  fill: #5578EB;
+  transition: all 0.5s ease;
 }
 .sidebar .nav-list{
   margin-top: 20px;
@@ -181,6 +188,9 @@ body{
 .sidebar li a:hover{
   background: #FFF;
 }
+.sidebar li.active a{
+  background: #fff;
+}
 .sidebar li a .links_name{
   color: #fff;
   font-size: 14px;
@@ -197,6 +207,9 @@ body{
 .sidebar li a:hover .links_name,
 .sidebar li a:hover i{
   transition: all 0.5s ease;
+  color: #5578EB;
+}
+.sidebar li.active a .links_name{
   color: #5578EB;
 }
 .sidebar li svg{
@@ -649,4 +662,334 @@ body{
 }
 .analysis-result .total-text{
   color: #3BB77E;
+}
+
+
+.sidebar.open ~ .inner-section{
+  position: relative;
+  left: 260px;
+  transition: all 0.5s ease;
+  width: calc(100% - 260px);
+}
+.sidebar ~ .inner-section{
+  left: 90px;
+  position: relative;
+  transition: all 0.5s ease;
+  width: calc(100% - 90px);
+}
+.inner-section .publish-new-post{
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+}
+.publish-new-post .publish-content, .publish-new-post .new-post{
+  display: flex;
+  align-items: center;
+}
+.publish-new-post span{
+  padding-left: 10px;
+}
+.inner-inner-section{
+  display: grid;
+  grid-template-columns: 250px repeat(2, 1fr);
+  grid-gap: 20px;
+}
+.inner-section-item{
+  background-color: rgba(155, 190, 255, 1);
+  padding: 20px;
+  border-radius: 20px;
+}
+.inner-add-accounts{
+  background-color: white;
+  border-radius: 20px;
+  border: 1px dashed gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+.inner-add-accounts .add-account-button button{
+  background: rgba(0, 0, 0, 0.69);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+}
+.inner-section-item .button-content ul{
+  display: flex;
+  background-color: white;
+  justify-content: space-around;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  border-radius: 10px;
+}
+.inner-section-item .button-content ul li{
+  list-style: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.inner-section-item .button-content ul li.is-active{
+  background: rgba(85, 120, 235, 1);
+  color: white;
+}
+.tabs__pane{
+  display: none;
+}
+.tabs__pane.is-visible{
+  display: block;
+}
+.input-item{
+  margin-top: 2rem;
+}
+.input-item textarea{
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  resize: none;
+}
+.input-item .fields-section{
+  display: flex;
+  border: 1px solid white;
+  padding: 2px 8px;
+  margin-top: -8px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.input-item .fields-section .file-field{
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 12px;
+  padding-right: 10px;
+}
+.input-item .fields-section .upload-field{
+  padding: 1px 10px;
+  border-right: 1px solid rgb(218, 218, 218);
+  border-left: 1px solid rgb(218, 218, 218);
+}
+.checkbox-field{
+  margin-top: 2rem;
+}
+.checkbox-field input{
+  border: none;
+  padding: 5px;
+}
+.input-item .fields-section .share-field{
+  padding: 1px 10px;
+  border-right: 1px solid rgb(218, 218, 218);
+}
+.input-item.bottom-item textarea{
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  resize: none;
+}
+.input-item.bottom-item .fields-section{
+  background: white;
+}
+.submit-post-button{
+  text-align: end;
+}
+.post-now{
+  padding: 10px 20px;
+  background: rgba(85, 120, 235, 1);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 4rem;
+}
+.inner-section-item:last-child{
+  background: rgba(155, 190, 255, 0.54);
+}
+.social-media-icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.user-profi{
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.user-profi .user-name{
+  display: flex;
+  flex-direction: column;
+}
+.user-profi .user-name span{
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 13px;
+}
+.like-share-comment{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid rgb(228, 228, 228);
+}
+.like-share-comment .like-button, .like-share-comment .comment-button, .like-share-comment .share-button{
+  display: flex;
+  align-items: center;
+}
+.like-share-comment .like-button span, .like-share-comment .comment-button span, .like-share-comment .share-button span{
+  padding-left: 10px;
+}
+.user-sm-item{
+  background: rgb(241, 241, 241);
+  height: 15px;
+  margin: 5px 0;
+}
+.user-lg-item{
+  background: rgb(241, 241, 241);
+  height: 20rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.user-comment-section{
+  background: #fff;
+  margin-top: 2rem;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.enter-link input{
+  padding: 10px;
+  margin-top: 2rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  background: transparent;
+  width: 100%;
+}
+
+
+/* Ress Feed section */
+.ress-feed-title{
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+}
+.ress-feed-title span{
+  padding-left: 10px;
+  font-size: 22px;
+  color: rgba(85, 120, 235, 1);
+}
+.add-ress-feed-card{
+  padding: 20px;
+  width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(155, 190, 255, 1);
+  border-radius: 20px;
+}
+.add-card-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.add-card-header .title{
+  color: #5578EB;
+}
+.add-card-header .close-button{
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.add-ress-feed-card input{
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  color: #5578EB;
+  padding: 10px;
+  font-weight: 600;
+  line-height: 0;
+}
+.add-ress-feed-card .button-field{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+.add-ress-feed-card .button-field .bottom-close{
+  border: 1px solid #5578EB;
+  background-color: transparent;
+  padding: 8px 20px;
+  border-radius: 10px;
+  color: #5578EB;
+  cursor: pointer;
+}
+.add-ress-feed-card .button-field .submit-btn{
+  border: none;
+  background: rgba(85, 120, 235, 1);
+  padding: 8px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* sidebar dropdown menu */
+.sidebar .sidebar-drop .sidebar-submenu{
+  display: none;
+}
+
+
+.sidebar-submenu li.active,.sidebar-submenu li:hover{
+  background: white !important;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 35px;
+  border-top-left-radius: 5px;
+}
+.sidebar-submenu li.active a,.sidebar-submenu li:hover a{
+  color: #5578EB;
+}
+.sidebar-submenu li a{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  color: white;
+  background-color: transparent !important;
+}
+
+.sidebar-submenu li span{
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+.sidebar-submenu li.active a span,.sidebar-submenu li a:hover span{
+ border-color: #5578EB;
+ transition: all 0.5s ease;
+}
+
+/* Facebook Post */
+.inner-section .facebook-new-post{
+  display: flex;
+  padding: 15px 0;
+  align-items: center;
+  column-gap: 40px;
+}
+.inner-section .facebook-new-post div{
+  display: flex;
+  align-items: center;
+}
+.inner-section .facebook-new-post div span{
+  padding-left: 10px;
 }

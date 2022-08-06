@@ -39,3 +39,29 @@ $(window).resize(function() {
   }
   else {$('.sidebar').addClass('open');}
 });
+
+
+
+$(".sidebar-drop > a").click(function() {
+  $(".sidebar-submenu").slideUp(200);
+  if (
+    $(this)
+      .parent()
+      .hasClass("active")
+  ) {
+    $(".sidebar-drop").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
+  } else {
+    $(".sidebar-drop").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(200);
+    $(this)
+      .parent()
+      .addClass("active");
+  }
+});
+
+
